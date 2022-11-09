@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CRUD</title>.
+    <title>CRUD</title>
 
-    <!-- Importando o BootStrap CSS
+    <!-- Importando o BootStrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    -->
+   
 
     <!-- Importando o BootStrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -17,73 +17,68 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/burguer.css">
+    <link rel="stylesheet" href="./css/pro.css">
 </head>
-<body>
+<body style="text-decoration:none" >
+
+
+  <div class="consultorio"> 
+  
     <nav>
-        <!-- <label class="logo">"SORRIYES"</label> -->
+      <!-- <label class="logo">"SORRIYES"</label> -->
+      <ul class=""> 
+        <li><a href="#">Consultas</li>
+        <li><a href="#">Cadastrar Dentista</li>
+        <li><a href="#">Cadastrar Cliente</li>
+        <li><a href="#">Promoções</li>
+        <li><a href="#">Cadastrar Especialidade</li>
+      </ul>
+    </nav>  
 
-        <ul class="">  <!--Criar Menu Hamburguer-->
-            <li><a href="#">Consultas</li>
-            <li><a href="#">Cadastrar Dentista</li>
-            <li><a href="#">Cadastrar Cliente</li>
-            <li><a href="#">Promoções</li>
-            <li><a href="#">Cadastrar Especialidade</li>
-        </ul>
-    </nav>
-    <main>
 
-        <!-- AVALIAR MELHORIAS PARA CONTAINER -->
+  </div>
 
-        <!-- <div class="tela_inicial">
-            <input type="text" placeholder="Pesquise sua Consulta" class="pesquisa" id="pesquisa">
-            <input type="submit" class="botao" value= "🚀")>
+  <div class="consultorio">             
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/bg1.jpg" height="760" width="600" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>FAZEMOS SEUS MOMENTOS MAIS FELIZES</h2>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/bg2.jpg" height="760" width="600" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 style="color:aliceblue">COMO É BOM SORRIR EM FAMILIA</h2>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 style="color:aliceblue">INDEPENDENTE DA SITUAÇÃO SEMPRE É BOM SORRIR</h2>
+            </div>
+            <img src="img/bg3.jpg" height="760" width="600"  class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
-        <div class="consultorio">             
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/est-1.png" height="600" width="200" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h2>ESTÉTICA</h2>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/est-2.png" height="400" width="200" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h2>ORTOPEDIA</h2>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/est-3.png" height="400" width="200"  class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h2>CIRURGIÃO</h2>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-        </div> -->
+  <script src="./js/script.js"></script>
 
-    </main>
-
-    <script src="./js/script.js"></script>
-
-    <footer>
-        <p>Copyright 2022 © | ❤🚀❤ Vitor de Jesus ❤🚀❤</p>
-    </footer>
+  <footer>
+    <p>Copyright 2022 © | ❤🚀❤ Vitor de Jesus ❤🚀❤</p>
+  </footer>
 </body>
-
 </html>
