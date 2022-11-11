@@ -8,12 +8,6 @@ function Peq (event) {
 
 
 
-
-
-
-
-
-
 window.onload = () => {
     const pesquisa = document.querySelector('pesquisa');
     pesquisa.addEventListener('click', Peq);
