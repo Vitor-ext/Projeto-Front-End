@@ -1,4 +1,31 @@
-.form-group{
-    padding: 500px;
 
+.form-group{
+    padding: 20px;
+    text-align: left;
+ 
+    
+}
+
+input{
+    width: 90%;
+    padding: 20px;
+    display: flow-root;
+    text-align: center;
+    margin: 30px;
+    
+}
+
+label{
+    padding: 35px;
+    text-align: left;
+    font-size: 30px;
+    color: blueviolet;   
+}
+
+.button{
+    width: 120px;
+    color: blueviolet; 
+    padding: 20px;
+    margin: 30px;
+    font-size: large;
 }
