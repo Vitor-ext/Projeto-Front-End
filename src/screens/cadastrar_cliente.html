@@ -19,31 +19,33 @@
       <!-- <label class="logo">"SORRIYES"</label> -->
       <ul class=""> 
         <li><a href="../../index.html">Inicio</a></li>
-        <li><a href="./src/screens/Cadastrar_consultas.html">Consultas</a></li>
-        <li><a href="./src/screens/cadastrar_dentista.html">Cadastrar Dentista</a></li>
-        <li><a href="./src/screens/cadastrar_especialidade.html">Cadastrar Especialidade</a></li>
+        <li><a href="./consultas.html">Consultas Agendadas</li>
+        <li><a href="./cadastrar_consultas.html">Agendar Consulta</li>
+        <li><a href="./cadastrar_dentista.html">Cadastrar Dentista</a></li>
+        <li><a href="./cadastrar_especialidade.html">Cadastrar Especialidade</a></li>
       </ul>
     </nav>  
   </div> 
   
     <h1>Cadastro de Clientes</h1>
 
-    <form>
-      <div class="form-group">
+    <form method="GET">
+      <div class="form-group" >
         <label>NOME DO CLIENTE</label>
-        <input type="text"  id="Nome_Cliente" placeholder="NOME COMPLETO">
+        <input type="text"  id="Nome_Cliente" class="Nome_Cliente" placeholder="NOME COMPLETO">
         <label>CPF</label>
-        <input type="text" id="CPF_Cliente" placeholder="CPF">
+        <input type="text" class="CPF_Cliente"placeholder="CPF">
         <label>RG</label>
-        <input type="text" id="RG_Cliente"  placeholder="RG">
+        <input type="text" class="RG_Cliente"  placeholder="RG">
         <label>TELEFONE</label>
-        <input type="text" id="Telefone_Cliente" placeholder="TELEFONE">
+        <input type="text" class="Telefone_Cliente" placeholder="TELEFONE">
       </div>
     </form>
 
     <button id="" class="button">Cadastrar</button>
 
-  <script src="./js/script.js"></script>
+  <script src="../../js/script.js"></script>
+  <script src="../../js/cd_cliente.js"></script>
 
   <footer>
     <p>Copyright 2022 © | ❤🚀❤ Vitor de Jesus ❤🚀❤</p>
