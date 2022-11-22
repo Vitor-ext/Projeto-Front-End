@@ -13,10 +13,20 @@ function handler(e) {
 
     if (cliente && CPF && RG && telefone) {
         
-        const _url = ``;     
+        const _data = {
+            id:"",
+            nome: cliente,
+            cpf: CPF, 
+            rg: RG, 
+            telefone: telefone
+        };
+
+        const _url = ` http://localhost:3000/clientes`;     
 
         const _options = {
-            method: 'POST',
+            method: 'post',
+            body: JSON.stringify(_data),
+            headers: {"Content-type": "application/json; charset=UTF-8"},
             mode: 'cors',
             redirect: 'follow',
             cache: 'default'
@@ -25,14 +35,17 @@ function handler(e) {
 
         fetch(_url, _options)
             .then(function(response) {
-
                 // Tratar Erros
                 if(!response.ok) throw new Error('Erro ao executar requisição!');
 
-                // Retornar objeto no formato JSON
-                return response.text();
             }
-        )
+        ) 
+        .then(function(response){
+            //console.log(response)
+            if(response==null){
+                window.location.reload();
+            }
+        })
  
     } else {
         alert('1 ou mais campos de pesquisa estão vazios, por favor preecha todos os campos!');

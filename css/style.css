@@ -87,6 +87,19 @@ h2{
     color: black;
 }
 
+table{
+    padding: 20px;
+    display: flex;
+    
+}
+
+td{
+    padding: 50px;
+}
+
+/* .tabela{
+    text-align: center;
+} */
 
 @media (max-width:768px) {
        
