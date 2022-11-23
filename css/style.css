@@ -85,22 +85,44 @@ footer p{
 
 h2{
     color: black;
+    padding: 20px;
 }
 
-table{
+.consultas{
     padding: 20px;
-    display: flex;
+    border-color: black;
+    text-align: left;
+    width: 100%;
+}
+
+.td_title{
+    background-color: black;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+.tr_title{
+    color: #a490da;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.td_item{
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+.tr_item{
+    background-color: rgb(218, 214, 214);
+}
+
+.tabela{
+    padding: 20px;
+    align-items: center;
+    text-align: left;
     
 }
-
-td{
-    padding: 50px;
-}
-
-/* .tabela{
-    text-align: center;
-} */
-
 @media (max-width:768px) {
        
     body{

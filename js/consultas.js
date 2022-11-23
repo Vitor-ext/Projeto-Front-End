@@ -1,14 +1,6 @@
 function handler(e) {
     e.preventDefault();
 
-    // const _data = {
-    //     id: "",
-    //     nome: dentista,
-    //     cpf: CPF,
-    //     rg: RG,
-    //     telefone: telefone
-    // };
-
     const _url = `http://localhost:3000/consultas`;
 
     const _options = {
@@ -30,11 +22,20 @@ function handler(e) {
             console.log(data);
 
             let newContent = "";
-            for(let i = 1; i < data.length; i++) {        
-                newContent += `<tr>item: ${data[i].id}</tr>`;
-                newContent += `<tr>paciente: ${data[i].cliente}</tr>`;
-                newContent += `<tr>horario: ${data[i].horario}</tr>`;
-                newContent += `<tr>dentista: ${data[i].dentista}</tr>`;
+                newContent += `<tr class="tr_title">`;  
+                newContent += `<td class="td_title">ID</td>`;
+                newContent += `<td class="td_title">CLIENTES</td>`;
+                newContent += `<td class="td_title">HORARIO</td>`;
+                newContent += `<td class="td_title">DENTISTA</td>`;
+                newContent += `</tr>`;  
+            for(let i = 1; i < data.length; i++) { 
+                newContent += `<tr class="tr_item">`;    
+                newContent += `<td class="td_item">${data[i].id}</td>`;
+                newContent += `<td class="td_item">${data[i].cliente}</td>`;
+                newContent += `<td class="td_item">${data[i].horario}</td>`;
+                newContent += `<td class="td_item">${data[i].dentista}</td>`;
+                newContent += `</tr>`;
+                
             }
 
             document.getElementById('consultas').innerHTML = newContent;
@@ -44,8 +45,6 @@ function handler(e) {
     )
 
 }
-
-
 
 
 

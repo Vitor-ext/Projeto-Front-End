@@ -1,57 +1,68 @@
+
+window.onload = handler;
+
+const { addListener } = require("nodemon");
+
 function handler(e) {
     e.preventDefault();
 
-    let dentista = document.querySelector('.Nome_Dentista').value;
-    let CPF = document.querySelector('.CPF_Dentista').value;
-    let RG = document.querySelector('.RG_Dentista').value;
-    let telefone = document.querySelector('.Telefone_Dentista').value;
-    let endereco = document.querySelector('.Endereco_Dentista').value;
+    console.log("Deu Certo !");
 
-    // Realize o teste unitario
+    const _urlcl = `http://localhost:3000/clientes`;
+    const _urldt = `http://localhost:3000/dentistas`;
 
-    if (dentista && CPF && RG && telefone && endereco) {
-        
-        const _data = {
-            id:"",
-            nome: dentista,
-            cpf: CPF, 
-            rg: RG, 
-            telefone: telefone
-        };
+    const _options = {
+        method: 'get',
+        mode: 'cors',
+        redirect: 'follow',
+        cache: 'default'
+    }
 
-        const _url = ` http://localhost:3000/dentistas`;     
+    fetch(_urlcl, _options)
+        .then(function (response) {
+            // Tratar Erros
+            if (!response.ok) throw new Error('Erro ao executar requisição!');
 
-        const _options = {
-            method: 'post',
-            body: JSON.stringify(_data),
-            headers: {"Content-type": "application/json; charset=UTF-8"},
-            mode: 'cors',
-            redirect: 'follow',
-            cache: 'default'
+            return response.json();
+        }
+        )
+        .then(function (data) {
+            console.log(data);
+
+            let newContent = "";
+ 
+            for(let i = 1; i < data.length; i++) { 
+                newContent += `<option class="td_item">${data[i].nome}</option>`;                
+            }
+
+            document.getElementById('cliente').innerHTML = newContent;
+
         }
 
+    )
 
-        fetch(_url, _options)
-            .then(function(response) {
-                // Tratar Erros
-                if(!response.ok) throw new Error('Erro ao executar requisição!');
 
-            }
-        ) 
-        .then(function(response){
-            //console.log(response)
-            if(response==null){
-                window.location.reload();
-            }
-        })
- 
-    } else {
-        alert('1 ou mais campos de pesquisa estão vazios, por favor preecha todos os campos!');
+    fetch(_urldt, _options)
+    .then(function (response) {
+        // Tratar Erros
+        if (!response.ok) throw new Error('Erro ao executar requisição!');
+
+        return response.json();
     }
- }
+    )
+    .then(function (data) {
+        console.log(data);
+
+        let newContent = "";
+
+        for(let i = 1; i < data.length; i++) { 
+            newContent += `<option class="td_item">${data[i].nome}</option>`;            
+        }
+
+        document.getElementById('dentista').innerHTML = newContent;
+
+    }
+
+)}
 
 
-window.onload = () => {
-    const submit = document.querySelector('.button');
-    submit.addEventListener('click', handler);
-}
