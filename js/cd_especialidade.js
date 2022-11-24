@@ -38,6 +38,7 @@ function handler(e) {
             //console.log(response)
             if(response==null){
                 window.location.reload();
+                alert('Dados cadastrados com sucesso !');
             }
         })
  

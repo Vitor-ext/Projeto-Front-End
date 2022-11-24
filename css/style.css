@@ -16,12 +16,6 @@ body{
 
 }
 
-.teste{
-    height: 800px;
-    width: 100%;
-
-}
-
 footer p{
     text-align: center;
     color: black;
@@ -123,22 +117,22 @@ h2{
     text-align: left;
     
 }
-@media (max-width:768px) {
+@media (max-width:800px) {
        
     body{
+
         padding: 30px 30px 25px 30px;
-        background-color: #0006;
+        background-color: #000000;
         background-blend-mode: darken;
         text-align: center;
         z-index: -2;
 
     }
-    .consultorio{
-        opacity: 0.5;
-    }
+
     nav{
-        opacity: 0;
+        display: none;
     }
+
 }
 
 @keyframes zoom {

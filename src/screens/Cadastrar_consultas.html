@@ -1,57 +1,59 @@
-<!DOCTYPE html>     
+<!DOCTYPE html>
 <html lang="br-pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cadastro Cliente</title>
 
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/consulta.css">
-    <link rel="stylesheet" href="../../css/burguer.css">
-    <link rel="stylesheet" href="../../css/forms.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cadastro Cliente</title>
+
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/consulta.css">
+  <link rel="stylesheet" href="../../css/burguer.css">
+  <link rel="stylesheet" href="../../css/forms.css">
 </head>
+
 <body>
 
-  <div class="consultorio"> 
-  
+  <div class="consultorio">
+
     <nav>
       <!-- <label class="logo">"SORRIYES"</label> -->
-      <ul class=""> 
+      <ul class="">
         <li><a href="../../index.html">Inicio</a></li>
         <li><a href="./consultas.html">Consultas Agendadas</li>
         <li><a href="./cadastrar_cliente.html">Cadastrar Cliente</a></li>
         <li><a href="./cadastrar_dentista.html">Cadastrar Dentista</a></li>
         <li><a href="./cadastrar_especialidade.html">Cadastrar Especialidade</a></li>
       </ul>
-    </nav>  
-  </div> 
-  
-    <h1>Agendar Consultas</h1>
+    </nav>
+  </div>
 
-    <form>
-      <div class="form-group">
-        <label>CLIENTE</label>
-        <form>
-          <input type="text" class="cliente" placeholder="CLIENTE" list="cliente">
-        </form>
+  <h1>Agendar Consultas</h1>
 
-        <label>DENTISTA</label>
-        <form>
-          <input type="text" class="dentista" placeholder="DENTISTA" list="dentista">
-        </form>
+  <form>
+    <div class="form-group">
+      <label>CLIENTE</label>
+      <input class="cliente1" placeholder="CLIENTE" list="cliente">
+      <datalist id="cliente"></datalist>
 
-        <label>HORARIO</label>
-        <input type="datetime-local"  id="horario" placeholder="HORARIO">
+      <label>DENTISTA</label>
+      <input class="dentista1" placeholder="DENTISTA" list="dentista">
+      <datalist id="dentista"></datalist>
+
+      <label>HORARIO</label>
+      <input type="datetime-local" id="horario" placeholder="HORARIO" class="horario">
     </div>
-    </form>
+  </form>
 
-    <button id="" class="button">Agendar</button>
+  <button id="" class="button">Agendar</button>
 
   <script src="../../js/cd_consultas.js"></script>
+  <script src="../../js/gt_consultas.js"></script>
 
   <footer>
     <p>Copyright 2022 © | ❤🚀❤ Vitor de Jesus ❤🚀❤</p>
   </footer>
 </body>
+
 </html>

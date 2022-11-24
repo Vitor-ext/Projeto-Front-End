@@ -1,68 +1,61 @@
+const submit = document.querySelector('.button');
+submit.addEventListener('click', handler);
 
-window.onload = handler;
 
-const { addListener } = require("nodemon");
-
-function handler(e) {
+function handler (e) {
     e.preventDefault();
 
-    console.log("Deu Certo !");
+    let cliente = document.querySelector('.cliente1').value;
+    let dentista = document.querySelector('.dentista1').value;
+    let  horario = document.querySelector('.horario').value;
 
-    const _urlcl = `http://localhost:3000/clientes`;
-    const _urldt = `http://localhost:3000/dentistas`;
+    // console.log(cliente);  // Teste Unitario
+    // console.log(dentista);       // Teste Unitario
+    // console.log(horario);      // Teste Unitario
 
-    const _options = {
-        method: 'get',
-        mode: 'cors',
-        redirect: 'follow',
-        cache: 'default'
-    }
 
-    fetch(_urlcl, _options)
-        .then(function (response) {
-            // Tratar Erros
-            if (!response.ok) throw new Error('Erro ao executar requisição!');
+    if (cliente && dentista && horario) {
+        
+        const _data = {
+            id:"",
+            cliente: cliente,
+            dentista: dentista, 
+            horario: horario
+        };
 
-            return response.json();
+        const _url = ` http://localhost:3000/consultas`;     
+
+        const _options = {
+            method: 'post',
+            body: JSON.stringify(_data),
+            headers: {"Content-type": "application/json; charset=UTF-8"},
+            mode: 'cors',
+            redirect: 'follow',
+            cache: 'default'
         }
-        )
-        .then(function (data) {
-            console.log(data);
 
-            let newContent = "";
- 
-            for(let i = 1; i < data.length; i++) { 
-                newContent += `<option class="td_item">${data[i].nome}</option>`;                
+
+        fetch(_url, _options)
+            .then(function(response) {
+                // Tratar Erros
+                if(!response.ok) throw new Error('Erro ao executar requisição!');
+                
+
             }
-
-            document.getElementById('cliente').innerHTML = newContent;
-
-        }
-
-    )
-
-
-    fetch(_urldt, _options)
-    .then(function (response) {
-        // Tratar Erros
-        if (!response.ok) throw new Error('Erro ao executar requisição!');
-
-        return response.json();
+        ) 
+        .then(function(response){
+            //console.log(response)
+            if(response==null){
+                window.location.reload();
+                alert('Dados cadastrados com sucesso !');
+                
+            }
+        })
+ 
+    } else {
+        alert('1 ou mais campos de pesquisa estão vazios, por favor preecha todos os campos!');
     }
-    )
-    .then(function (data) {
-        console.log(data);
+}
 
-        let newContent = "";
-
-        for(let i = 1; i < data.length; i++) { 
-            newContent += `<option class="td_item">${data[i].nome}</option>`;            
-        }
-
-        document.getElementById('dentista').innerHTML = newContent;
-
-    }
-
-)}
 
 

@@ -44,13 +44,3 @@ a.active, a:hover {
 #check {
 	display: none;
 }
-
-@media (max-width:768px) {
-    .menu-burger-container{
-		display: flex;
-		z-index: 100;
-	}
-	nav{
-		z-index: 10;
-	}
-}
